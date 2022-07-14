@@ -2,8 +2,6 @@
 
 This repository provides an example of how to interface with a csv data file using the [Python Django Framework](https://www.djangoproject.com/).
 
---
-
 ### Requirements
 * Python 3
 * Django, `python -m pip install Django`, [more info](https://docs.djangoproject.com/en/4.0/intro/install/)
