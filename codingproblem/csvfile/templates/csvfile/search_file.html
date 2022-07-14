@@ -1,0 +1,139 @@
+<center>
+<h1>Take Home Assignment</h1>
+</center>
+
+<center>
+<h2>Load data from a csv file</h2>
+</center>
+
+<center>
+<nav>
+    <form class="button-read-file" method=POST action="{% url 'search_file' %}">
+
+	    {% csrf_token %}
+
+	    <input class="from-read-file"
+	    type="search" placeholder=".. path + extension"
+	    aria-label="Search" name="read_file">
+	    <button class="btn btn-outline-secondary" type="submit">
+		    Read file
+	    </button>
+    </form>
+</nav>
+</center>
+
+{% if read_warning %}
+    <center>
+	{{ read_warning }}
+    </center>
+{% endif %}
+
+<hr width=100%>
+
+<center>
+<h3>Search file name</h3>
+</center>
+
+<center>
+<nav>
+    <form class="button-file-name" method=POST action="{% url 'search_file' %}">
+
+	    {% csrf_token %}
+
+	    <input class="from-file-name"
+	    type="search" placeholder=".. e.g. testA"
+	    aria-label="Search" name="searched_file_name">
+	    <button class="btn btn-outline-secondary" type="submit">
+		    Search
+	    </button>
+    </form>
+</nav>
+</center>
+
+<hr width=100%>
+
+<center>
+<h3>Search file path</h3>
+</center>
+
+<center>
+<nav>
+    <form class="button-file-path" method=POST action="{% url 'search_file' %}">
+
+	    {% csrf_token %}
+
+	    <input class="from-file-path"
+	    type="search" placeholder=".. e.g. /home"
+	    aria-label="Search" name="searched_file_path">
+	    <button class="btn btn-outline-secondary" type="submit">
+		    Search
+	    </button>
+    </form>
+</nav>
+</center>
+
+<hr width=100%>
+
+<center>
+<h3>Search exact file extension</h3>
+</center>
+
+<center>
+<nav>
+    <form class="button-file-extension" method=POST action="{% url 'search_file' %}">
+
+	    {% csrf_token %}
+
+	    <input class="from-file-extension"
+	    type="search" placeholder=".. e.g. pdf"
+	    aria-label="Search" name="searched_file_extension">
+	    <button class="btn btn-outline-secondary" type="submit">
+		    Search
+	    </button>
+    </form>
+</nav>
+</center>
+
+<hr width=100%>
+
+<center>
+<h3>Search file size</h3>
+Operators (==, <, <=, >, >=),  Units (K, M, G)
+</center>
+
+<center>
+<nav>
+    <form class="button-file-size" method=POST action="{% url 'search_file' %}">
+
+	    {% csrf_token %}
+
+	    <input class="from-file-size"
+	    type="search" placeholder=".. e.g. > 2M"
+	    aria-label="Search" name="searched_file_size">
+	    <button class="btn btn-outline-secondary" type="submit">
+		    Search
+	    </button>
+    </form>
+</nav>
+</center>
+
+<hr width=100%>
+
+<center>
+<h3>Results</h3>
+</center>
+
+{% if query %}
+    <center>
+        {{ query }}
+    </center>
+{% endif %}
+</br>
+
+{% if entry_list %}
+    <center>
+        {% for entry in entry_list %}
+        {{ entry }}<br/>
+        {% endfor %}
+    </center>
+{% endif %}

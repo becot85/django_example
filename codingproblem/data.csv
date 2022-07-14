@@ -1,0 +1,5 @@
+FileName,FilePath,Size
+TestA.txt,/home/user/,10K
+TestB.csv,/home/user/csvfiles/,2M
+TestC.pdf,/lib/TestC.pdf,4M
+TestA.hdf5,/usr/share/TestA.hdf5,500G
