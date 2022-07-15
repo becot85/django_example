@@ -21,4 +21,4 @@ This repository provides an example of how to interface with a csv data file usi
 
 * Search the content of the csv file using the different text boxes.
 
-* **Note:** The csv file is located in the `codingproblem/` folder.
+* **Note:** The csv file is located in the `django_example/codingproblem/` folder.
