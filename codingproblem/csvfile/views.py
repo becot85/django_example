@@ -118,7 +118,7 @@ def read_file(csv_file_path, context):
     if os.path.isfile(csv_file_path):
 
         # Try to load data
-        if True:
+        try:
 
             # Convert csv file into a Pandas DataFrame
             data = pd.read_csv(csv_file_path, sep=',')
@@ -141,7 +141,7 @@ def read_file(csv_file_path, context):
             context["read_warning"] = "Data loaded from '"+csv_file_path+"'."
 
         # Generate error message if something went wrong during the reading
-        else:
+        except:
             context["read_warning"] = \
                 "Error - The csv file '"+csv_file_path+"' has structure issues. No data loaded."
 
